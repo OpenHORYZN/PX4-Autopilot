@@ -66,3 +66,20 @@ param set-default SIM_GZ_EC_MAX5 1000
 param set-default SIM_GZ_EC_MAX6 1000
 
 param set-default MPC_THR_HOVER 0.60
+
+# Enable EV position, velocity, and yaw fusion (Bitmask 15)
+param set-default EKF2_EV_CTRL 15
+
+# Set primary height source to External Vision (3)
+param set-default EKF2_HGT_REF 3
+
+# Disable GPS fusion (0) since we rely on Lidar Odometry
+param set-default EKF2_GPS_CTRL 0
+
+# Adjust delay to account for Lidar processing and MAVROS overhead
+param set-default EKF2_EV_DELAY 50
+
+param set-default EKF2_EV_NOISE_MD 0
+param set-default EKF2_EVP_NOISE 0.1
+param set-default EKF2_EVA_NOISE 0.1
+param set-default EKF2_MAG_TYPE 2
